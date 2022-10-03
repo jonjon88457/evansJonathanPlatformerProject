@@ -25,11 +25,11 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
-        if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S))
+        if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) && grounded)
         {
             SlideLeft();
         }else
-        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S) && grounded)
         {
             SlideRight();
         }else 
@@ -45,14 +45,6 @@ public class PlayerController : MonoBehaviour
         }
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == ("Powerup"))
-        {
-
-        }
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == ("Ground"))
