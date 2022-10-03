@@ -20,7 +20,7 @@ public class PowerUpScript : MonoBehaviour
     {
         if(collision.gameObject.tag == ("Player"))
         {
-            Destroy(gameObject);
+            Destroy(gameObject);    
         }
     }
 }

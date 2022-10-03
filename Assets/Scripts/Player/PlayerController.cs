@@ -25,6 +25,14 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+        if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S))
+        {
+            SlideLeft();
+        }else
+        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
+        {
+            SlideRight();
+        }else 
         if (Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.D))
         {
             float xMove = Input.GetAxis("Horizontal");
@@ -56,5 +64,15 @@ public class PlayerController : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
         grounded = false;
+    }
+
+    private void SlideLeft()
+    {
+
+    }
+
+    private void SlideRight()
+    {
+
     }
 }
