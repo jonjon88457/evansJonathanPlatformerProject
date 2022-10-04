@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public float jumpPower;
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
         //Flip player when moving left-right
         if (horizontalInput > 0.01f)
-            transform.localScale = new Vector3(-1, 2, 1);
+            transform.localScale = new Vector3(1, 2, 1);
         else if (horizontalInput < -0.01f)
             transform.localScale = new Vector3(-1, 2, 1);
 
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
             else
                 body.gravityScale = 1.5f;
 
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.Space))
             Jump();
         
         }
