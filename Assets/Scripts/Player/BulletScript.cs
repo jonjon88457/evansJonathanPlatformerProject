@@ -34,6 +34,13 @@ public class BulletScript : MonoBehaviour
         boxCollider.enabled = false;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject)
+        {
+            gameObject.SetActive(false);
+        }
+    }
     public void SetDirection(float _direction)
     {
         lifetime = 0;
