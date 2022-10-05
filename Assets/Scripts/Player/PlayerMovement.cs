@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D boxCollider;
     private float wallJumpCooldown;
     private float horizontalInput;
+    public int extraJumps;
 
     private void Awake()
     {
@@ -30,25 +31,26 @@ public class PlayerMovement : MonoBehaviour
         else if (horizontalInput < -0.01f)
             transform.localScale = new Vector3(-1, 2, 1);
 
-        //Wall jump logic
-        if (wallJumpCooldown > 0.2f)
+        //Jump
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-
-            if (onWall() && !isGrounded())
-            {
-                body.gravityScale = 0;
-                body.velocity = Vector2.zero;
-            }
-            else
-                body.gravityScale = 1.5f;
-
-            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W))
             Jump();
-        
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space) && body.velocity.y > 0)
+        {
+         body.velocity = new Vector2(body.velocity.x, body.velocity.y / 2);
+        }
+        if (onWall())
+        {
+            body.gravityScale = 0;
+            body.velocity = Vector2.zero;
         }
         else
-            wallJumpCooldown += Time.deltaTime;
+        {
+            body.gravityScale = 1.5f;
+            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+        }
     }
 
     private void Jump()

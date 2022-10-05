@@ -22,7 +22,7 @@ public class BulletScript : MonoBehaviour
         transform.Translate(movementSpeed, 0, 0);
 
         lifetime += Time.deltaTime;
-        if(lifetime > 3)
+        if(lifetime > 1)
         {
             gameObject.SetActive(false);
         }
@@ -32,14 +32,14 @@ public class BulletScript : MonoBehaviour
     {
         hit = true;
         boxCollider.enabled = false;
+        gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject)
-        {
+    
             gameObject.SetActive(false);
-        }
+     
     }
     public void SetDirection(float _direction)
     {
