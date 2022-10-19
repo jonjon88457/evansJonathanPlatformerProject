@@ -73,6 +73,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void Slide()
+    {
+        if (isGrounded() && !onWall())
+        {
+
+        }
+    }
+
 
     private bool isGrounded()
     {
