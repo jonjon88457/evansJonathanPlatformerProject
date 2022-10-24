@@ -268,7 +268,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPlaceholder
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 837896981041493898, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
 --- !u!1 &151033965
 GameObject:
@@ -3228,7 +3229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 280098479054341666, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.5
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 280098479054341666, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3265,6 +3266,10 @@ PrefabInstance:
     - target: {fileID: 280098479054341666, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 837896981041493898, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
+      propertyPath: walkSpeed
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 7914587974234368420, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: m_Name
@@ -4896,7 +4901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7974634772317777885, guid: 79c1879512876204880400def1ad23f4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 9.3819
+      value: 9.426932
       objectReference: {fileID: 0}
     - target: {fileID: 7974634772317777885, guid: 79c1879512876204880400def1ad23f4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4904,7 +4909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7974634772317777885, guid: 79c1879512876204880400def1ad23f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3009
+      value: 2.2784
       objectReference: {fileID: 0}
     - target: {fileID: 7974634772317777885, guid: 79c1879512876204880400def1ad23f4, type: 3}
       propertyPath: m_LocalPosition.z
