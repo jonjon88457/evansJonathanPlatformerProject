@@ -7,13 +7,14 @@ public class Health : MonoBehaviour
     [Header ("Health")]
     public float startingHealth;
     public float currentHealth;
-    private bool dead;
+    public bool dead;
 
     [Header("IFrames")]
     public float iFramesDuration;
     public int flashNumber;
     private SpriteRenderer spriteRend;
 
+    public GameOverScript gg;
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -34,6 +35,7 @@ public class Health : MonoBehaviour
             //die
             GetComponent<PlayerMovement>().enabled = false;
             dead = true;
+            gg.Setup();
         }
     }
 
