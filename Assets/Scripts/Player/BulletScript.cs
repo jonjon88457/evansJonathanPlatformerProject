@@ -31,20 +31,12 @@ public class BulletScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         hit = true;
+
+        if (collision.tag == "Enemy")
+            collision.GetComponent<Health>().TakeDamage(1);
+        
         boxCollider.enabled = false;
         gameObject.SetActive(false);
-
-        if(collision.tag == "Enemy")
-        {
-            collision.GetComponent<Health>().TakeDamage(1);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-    
-            gameObject.SetActive(false);
-       
     }
     public void SetDirection(float _direction)
     {
