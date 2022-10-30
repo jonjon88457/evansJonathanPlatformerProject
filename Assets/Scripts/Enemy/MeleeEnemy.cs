@@ -13,7 +13,13 @@ public class MeleeEnemy : MonoBehaviour
 
     private float cooldownTimer = Mathf.Infinity;
     private Health playerHealth;
+    private EnemyPatrol enemyPatrol;
 
+
+    private void Awake()
+    {
+        enemyPatrol = GetComponentInParent<EnemyPatrol>();
+    }
     private void Update()
     {
         cooldownTimer += Time.deltaTime;
@@ -22,8 +28,11 @@ public class MeleeEnemy : MonoBehaviour
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
-
             }
+        }
+        if(enemyPatrol != null)
+        {
+            enemyPatrol.enabled = !PlayerInSight();
         }
     }
 
