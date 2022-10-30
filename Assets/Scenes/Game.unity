@@ -583,6 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: {fileID: 485573204}
   PlayerMovement: {fileID: 485573198}
+  CameraScript: {fileID: 0}
 --- !u!1 &278799646
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170a9c60b27b5bc4d91d2f98f8c42d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 5
   jumpPower: 12
   groundLayer:
     serializedVersion: 2
@@ -1142,7 +1143,6 @@ MonoBehaviour:
   dead: 0
   iFramesDuration: 1
   flashNumber: 3
-  gg: {fileID: 251118665}
 --- !u!1001 &508698692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4988,28 +4988,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1937344187501728973, guid: 3e61444624b95344f969e55ed333c462, type: 3}
   m_PrefabInstance: {fileID: 761903552}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1827797964 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7914587974234368420, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
-  m_PrefabInstance: {fileID: 117760540}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1827797968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 280098479054341666, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
   m_PrefabInstance: {fileID: 117760540}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1827797969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1827797964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a527da10408d7884c9aab842ece5c853, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1839153023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1937344187501728973, guid: 3e61444624b95344f969e55ed333c462, type: 3}

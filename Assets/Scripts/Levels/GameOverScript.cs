@@ -7,6 +7,7 @@ public class GameOverScript : MonoBehaviour
 {
     public Health hp;
     public PlayerMovement PlayerMovement;
+    public CameraScript CameraScript;
   public void Setup()
     {
         gameObject.SetActive(true);
@@ -18,6 +19,5 @@ public class GameOverScript : MonoBehaviour
         hp.currentHealth = 1;
         PlayerMovement.GetComponent<PlayerMovement>().enabled = true;
         hp.dead = false;
-
     }
 }

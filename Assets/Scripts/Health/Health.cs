@@ -14,7 +14,6 @@ public class Health : MonoBehaviour
     public int flashNumber;
     private SpriteRenderer spriteRend;
 
-    public GameOverScript gg;
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -35,7 +34,6 @@ public class Health : MonoBehaviour
             //die
             GetComponent<PlayerMovement>().enabled = false;
             dead = true;
-            gg.Setup();
         }
     }
 
