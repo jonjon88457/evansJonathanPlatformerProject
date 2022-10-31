@@ -10,15 +10,17 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask wallLayer;
     private Rigidbody2D body;
     private Animator anim;
-    private BoxCollider2D boxCollider;
-    private float wallJumpCooldown;
+    public BoxCollider2D boxCollider;
+    public BoxCollider2D crouchCollider;
+    public Transform player;
+    //private float wallJumpCooldown;
     private float horizontalInput;
     public int extraJumps;
+    private bool crouching;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
@@ -31,6 +33,15 @@ public class PlayerMovement : MonoBehaviour
         else if (horizontalInput < -0.01f)
             transform.localScale = new Vector3(-1, 2, 1);
 
+        //Crouch
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Crouch();
+        }
+        if(crouching == true)
+        {
+            player.localScale = new Vector3(transform.localScale.x, 1, transform.localScale.z);
+        }
         //Jump
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
@@ -43,8 +54,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if (onWall())
         {
-            body.gravityScale = 0;
-            body.velocity = Vector2.zero;
+           //body.gravityScale = 0;
+           // body.velocity = Vector2.zero;
         }
         else
         {
@@ -69,15 +80,25 @@ public class PlayerMovement : MonoBehaviour
             else
                 body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6);
 
-            wallJumpCooldown = 0;
+            //wallJumpCooldown = 0;
         }
     }
 
-    private void Slide()
+    private void Crouch()
     {
-        if (isGrounded() && !onWall())
+        if (isGrounded() && !onWall() && crouching == false)
         {
-
+            boxCollider.enabled = false;
+            crouchCollider.enabled = true;
+            crouching = true;
+            player.localScale =  new Vector3(transform.localScale.x, 1, transform.localScale.z);
+        }
+        else
+        {
+            crouching = false;
+            boxCollider.enabled = true;
+            crouchCollider.enabled = false;
+            player.localScale = new Vector3(transform.localScale.x, 2, transform.localScale.z);
         }
     }
 

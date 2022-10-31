@@ -166,5 +166,5 @@ MonoBehaviour:
   leftEdge: {fileID: 0}
   rightEdge: {fileID: 0}
   enemy: {fileID: 0}
-  speed: 0
+  speed: 3
   idleDuration: 0

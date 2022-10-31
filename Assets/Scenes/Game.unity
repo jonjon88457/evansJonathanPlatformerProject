@@ -224,9 +224,9 @@ GameObject:
   - component: {fileID: 35791614}
   - component: {fileID: 35791615}
   - component: {fileID: 35791616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -451,7 +451,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7124544769587549900, guid: 20c3267465cad2c48ab542bf6d9be0cc, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7124544769587549900, guid: 20c3267465cad2c48ab542bf6d9be0cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -678,6 +678,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &232910769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 232910771}
+  - component: {fileID: 232910770}
+  m_Layer: 10
+  m_Name: Crouching
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &232910770
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232910769}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &232910771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232910769}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 485573200}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &242628429 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1937344187501728973, guid: 3e61444624b95344f969e55ed333c462, type: 3}
@@ -1151,7 +1209,10 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 128
-  extraJumps: 0
+  boxCollider: {fileID: 485573201}
+  crouchCollider: {fileID: 232910770}
+  player: {fileID: 485573200}
+  extraJumps: 2
 --- !u!212 &485573199
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1212,10 +1273,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485573195}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: -3.485, z: 0}
+  m_LocalPosition: {x: -9.4, y: -3.485, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 232910771}
   - {fileID: 1482025841}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1664,7 +1726,7 @@ PrefabInstance:
       objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 7974634772317777856, guid: 79c1879512876204880400def1ad23f4, type: 3}
       propertyPath: m_Name
-      value: Slide
+      value: Crouch
       objectReference: {fileID: 0}
     - target: {fileID: 7974634772317777858, guid: 79c1879512876204880400def1ad23f4, type: 3}
       propertyPath: m_Color.b
@@ -2080,7 +2142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124544769587549900, guid: 20c3267465cad2c48ab542bf6d9be0cc, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7124544769587549900, guid: 20c3267465cad2c48ab542bf6d9be0cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2636,7 +2698,7 @@ PrefabInstance:
       objectReference: {fileID: 878921568}
     - target: {fileID: -7043729735725163104, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: speed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -7043729735725163104, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: leftEdge
@@ -2933,7 +2995,7 @@ GameObject:
   m_Component:
   - component: {fileID: 914140323}
   m_Layer: 0
-  m_Name: Level 2(Sliding)
+  m_Name: Level 2(Crouching)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3048,7 +3110,7 @@ PrefabInstance:
       objectReference: {fileID: 975167396}
     - target: {fileID: -7043729735725163104, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: speed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -7043729735725163104, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: leftEdge
@@ -3749,7 +3811,7 @@ PrefabInstance:
       objectReference: {fileID: 1290742593}
     - target: {fileID: -7043729735725163104, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: speed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -7043729735725163104, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: leftEdge
@@ -3897,7 +3959,7 @@ PrefabInstance:
       objectReference: {fileID: 1333227613}
     - target: {fileID: -7043729735725163104, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: speed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -7043729735725163104, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: leftEdge
@@ -4555,7 +4617,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 485573200}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1500991508
 GameObject:
@@ -4903,9 +4965,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 151722245}
   - {fileID: 640836157}
   - {fileID: 1762330234}
-  - {fileID: 151722245}
   - {fileID: 1710400705}
   - {fileID: 559187343}
   - {fileID: 1138375924}
@@ -4925,9 +4987,9 @@ GameObject:
   - component: {fileID: 1577627171}
   - component: {fileID: 1577627172}
   - component: {fileID: 1577627173}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5108,7 +5170,7 @@ PrefabInstance:
       objectReference: {fileID: 1626683236}
     - target: {fileID: -7043729735725163104, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: speed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -7043729735725163104, guid: b2af3f89e03c80a459f00975e37c4199, type: 3}
       propertyPath: leftEdge
@@ -5462,7 +5524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124544769587549900, guid: 20c3267465cad2c48ab542bf6d9be0cc, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7124544769587549900, guid: 20c3267465cad2c48ab542bf6d9be0cc, type: 3}
       propertyPath: m_LocalPosition.x
