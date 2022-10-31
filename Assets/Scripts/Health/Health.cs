@@ -50,6 +50,10 @@ public class Health : MonoBehaviour
 
             dead = true;
         }
+        if (dead == true)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private IEnumerator Invulnerability()

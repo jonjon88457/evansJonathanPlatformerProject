@@ -28,6 +28,14 @@ public class BulletScript : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<Health>().TakeDamage(1);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         hit = true;
