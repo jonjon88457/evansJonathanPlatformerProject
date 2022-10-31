@@ -41,7 +41,13 @@ public class PlayerMovement : MonoBehaviour
         if(crouching == true)
         {
             player.localScale = new Vector3(transform.localScale.x, 1, transform.localScale.z);
+            speed = 2.5f;
         }
+        else
+        {
+            speed = 5f;
+        }
+        
         //Jump
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
@@ -69,18 +75,6 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded())
         {
             body.velocity = new Vector2(body.velocity.x, jumpPower);
-        }
-        else if (onWall() && !isGrounded())
-        {
-            if (horizontalInput == 0)
-            {
-                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 10, 0);
-                transform.localScale = new Vector3(-Mathf.Sign(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            }
-            else
-                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6);
-
-            //wallJumpCooldown = 0;
         }
     }
 
