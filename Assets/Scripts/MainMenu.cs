@@ -16,4 +16,14 @@ public class MainMenu : MonoBehaviour
         Debug.Log("quit");
         Application.Quit();
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void MaiMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
