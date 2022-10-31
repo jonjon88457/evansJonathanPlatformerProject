@@ -1281,9 +1281,9 @@ GameObject:
   - component: {fileID: 418070332}
   - component: {fileID: 418070331}
   - component: {fileID: 418070330}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3025,9 +3025,9 @@ GameObject:
   - component: {fileID: 704321069}
   - component: {fileID: 704321068}
   - component: {fileID: 704321067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
