@@ -36,7 +36,7 @@ public class Health : MonoBehaviour
             if (GetComponent<PlayerMovement>() != null)
             {
                 GetComponent<PlayerMovement>().enabled = false;
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(2);
             }
 
             //Enemy
