@@ -7,7 +7,6 @@ public class GameOverScript : MonoBehaviour
 {
     public Health hp;
     public PlayerMovement PlayerMovement;
-    public CameraScript CameraScript;
   public void Setup()
     {
         gameObject.SetActive(true);

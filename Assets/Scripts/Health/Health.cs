@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     public int flashNumber;
     private SpriteRenderer spriteRend;
 
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -48,6 +49,7 @@ public class Health : MonoBehaviour
             if (GetComponent<MeleeEnemy>() != null)
             {
                 GetComponent<MeleeEnemy>().enabled = false;
+                //GetComponent<Boss>
             }
 
             dead = true;
