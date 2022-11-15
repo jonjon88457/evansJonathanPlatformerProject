@@ -3740,11 +3740,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1126970479415814917, guid: e16f5a37be9c3e847b46286718bd056f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 24
+      value: 23.7144
       objectReference: {fileID: 0}
     - target: {fileID: 1126970479415814917, guid: e16f5a37be9c3e847b46286718bd056f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.1427
       objectReference: {fileID: 0}
     - target: {fileID: 1126970479415814917, guid: e16f5a37be9c3e847b46286718bd056f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7387,7 +7387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1506606915}
   m_Layer: 0
-  m_Name: Level 1(Melee)
+  m_Name: Level 1(Shield)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
